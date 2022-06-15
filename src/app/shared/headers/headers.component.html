@@ -1,1 +1,84 @@
-<p>headers works!</p>
+<div [ngClass]="{ 'load-screen-wrapper': isLoading }">
+    <div [ngClass]="{ donut: isLoading }"></div>
+  </div>
+    <div class="fixed-top">
+      <div class=" bg-white border p-1">
+        <div class="container d-flex justify-content-between p-0">
+          <div class="d-flex ml-3">
+            <div class="align-self-center w-30px">
+              <img src="assets/images/KN-Circular.png" alt="" />
+            </div>
+            <div class="align-self-center w-150px">
+              <img src="assets/images/Kuehne_Nagel_logo.png" alt="" />
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="align-self-center bluecolor f13">
+              {{ "SHIPPING_INSTRUCTION" | translate }}
+            </div>
+            <div class="mx-2 align-items-center version-text">
+              V{{ 1 }}
+            </div>
+          </div>
+          <div class="d-flex box">
+            <div class="d-flex align-self-center" (click)="downloadTemplateFile()"
+            >
+              <div class=""><img src="assets/images/excel.svg" alt="" /></div>
+              <div class="small medium pl-1 hand-cursor">
+                {{ "DOWNLOAD_EXCEL_TEMPLATE" | translate }}
+              </div>
+            </div>
+            <div class="d-flex align-self-center px-4"
+             >
+              <div class="">
+                <img src="assets/images/cloud-computing.svg" alt="" />
+              </div>
+              <div class="small medium pl-1 hand-cursor">
+                {{ "UPLOAD_AS_EXCEL" | translate }}
+              </div>
+            </div>
+  
+  
+            <div class="d-flex align-self-center pr-4 down-csv position-relative">
+              <button>
+                <div class="csv-butt" class="tooltip-ico" (click)="downloadCsv()">
+                  <img src="assets/images/json.svg" alt="" />
+                </div>
+              </button>
+              <div class="tiptool">
+                {{ "DOWNLOAD_JSON" | translate }}
+              </div>
+            </div>
+  
+  
+            <input type="file" accept=".csv,.xlxs,.xlsm,.ods,.xlsx" (change)="dataUpload($event, newFile)"
+              [hidden]="true" #newFile />
+            <div class="d-flex align-self-center">
+              <button class="fillbtn" (click)="toggleLang()">
+                Chinese (中文)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" bg-purple py-2">
+        <div class="container d-flex flex-row align-items-center justify-content-between">
+          <div class=" justify-content-start">
+            <div class="opacity-less text-white small">
+              {{ "KN_REF_NUMBER" | translate }}
+            </div>
+            <div class="font-weight-lighter text-white">
+               4110-0238-206.053 
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="text-white small f12">
+              {{ "SI_CutOff" | translate }}
+            </div>
+            <div class="font-weight-lighter text-white ml-2 f12">
+              06/17/2022, 14:30:00
+            </div>
+            <div class="font-weight-lighter text-danger ml-2 f12">
+              06/17/2022, 14:30:00
+            </div>
+          </div>

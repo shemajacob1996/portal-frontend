@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostListener, Input } from "@angular/core";
 @Directive({
   selector: "[decimalLimiter]"
 })
-export class TwoDigitDecimaNumberDirective {
+export class TwoDigitDecimalNumberDirective {
   @Input() set decimalLimiter(val: number) {
     if (val === 3) {
       this.regex = new RegExp(/^\d*\.?\d{0,3}$/g);

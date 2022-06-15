@@ -11,5 +11,8 @@ export class HeadersComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  downloadTemplateFile(){}
+  downloadCsv(){}
+  dataUpload(event: any,file: any){}
+  toggleLang(){}
 }
