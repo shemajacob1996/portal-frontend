@@ -1,1 +1,20 @@
-<p>horizontal-stepper works!</p>
+<div class="m-4 card rounded"  >
+    <div class="card-title p-1">
+        <div class="wrapper">
+            <ol class="c-stepper">
+                <li class="c-stepper__item" routerLink="/parties">
+                    <h3 class="c-stepper__title">PARTIES</h3>
+                </li>
+                <li class="c-stepper__item" routerLink="/cargo-details" >
+                    <h3 class="c-stepper__title">CARGO DETAILS</h3>
+                </li>
+                <li class="c-stepper__item" routerLink="/upload-documents">
+                    <h3 class="c-stepper__title">UPLOAD DOCUMENTS</h3>
+                </li>              
+            </ol>
+        </div>
+    </div>
+    <div class="card-body">
+        <router-outlet></router-outlet>
+    </div>
+</div>
