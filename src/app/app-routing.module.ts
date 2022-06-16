@@ -5,18 +5,7 @@ import { PartiesComponent } from './parties/parties.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 
 const routes: Routes = [
-  {
-    path: 'parties',
-    component: PartiesComponent
-  },
-  {
-    path: 'cargo-details',
-    component: CargoDetailsComponent
-  },
-  {
-    path: 'upload-documents',
-    component: UploadDocumentsComponent
-  }
+  
 ];
 
 @NgModule({
