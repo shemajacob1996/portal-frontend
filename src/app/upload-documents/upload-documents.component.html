@@ -1,58 +1,77 @@
-<div class="row flex-wrap">
-    <div class="col-4 my-3">
-        <div class="d-flex w-100 upload-doc">
-            <span class="col-auto mx-3 mt-2">
-                <i class="fa-solid fa-file-invoice"></i>
-            </span>
-            <span class="col-9 mt-2">
-                <p class="fs-6 fw-bold">Commercial Invoice</p>
-            </span> 
-            <span class="mt-2 col-2" (click)="uploadFile.click()" >
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <input #uploadFile (change)="upload($event)" type='file' style="display:none"/>
-            </span>
+<div class="card">
+    <div class="card-title border-bottom">
+        <div class="wrapper">
+            <ol class="c-stepper">
+                <li class="c-stepper__item">
+                    <h3 class="c-stepper__title">PARTIES</h3>
+                </li>
+                <li class="c-stepper__item">
+                    <h3 class="c-stepper__title">CARGO DETAILS</h3>
+                </li>
+                <li class="c-stepper__item">
+                    <h3 class="c-stepper__title">UPLOAD DOCUMENTS</h3>
+                </li>
+            </ol>
         </div>
     </div>
-    <div class="col-4 my-3">
-        <div class="d-flex w-100 upload-doc">
-            <span class="col-auto mx-3 mt-2">
-                <i class="fa-solid fa-file-invoice"></i>
-            </span>
-            <span class="col-9 mt-2">
-                <p class="fs-6 fw-bold">Packing List</p>
-            </span> 
-            <span class="mt-2 col-2" (click)="uploadFile.click()" >
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <input #uploadFile (change)="upload($event)" type='file' style="display:none"/>
-            </span>
-        </div>
+    <div class="card-body">
+        <div class="row flex-wrap">
+            <div class="col-4 my-3">
+                <div class="d-flex w-100 upload-doc">
+                    <span class="col-auto mx-3 mt-2">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </span>
+                    <span class="col-9 mt-2">
+                        <p class="fs-6 fw-bold">Commercial Invoice</p>
+                    </span> 
+                    <span class="mt-2 col-2" (click)="uploadFile.click()" >
+                        <img src="../assets/images/cloud-computing.svg">
+                        <input #uploadFile (change)="upload($event)" type='file' style="display:none"/>
+                    </span>
+                </div>
+            </div>
+            <div class="col-4 my-3">
+                <div class="d-flex w-100 upload-doc">
+                    <span class="col-auto mx-3 mt-2">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </span>
+                    <span class="col-9 mt-2">
+                        <p class="fs-6 fw-bold">Packing List</p>
+                    </span> 
+                    <span class="mt-2 col-2" (click)="uploadFile.click()" >
+                        <img src="../assets/images/cloud-computing.svg">
+                        <input #uploadFile (change)="upload($event)" type='file' style="display:none"/>
+                    </span>
+                </div>
+            </div>
+            <div class="col-4 my-3">
+                <div class="d-flex w-100 upload-doc">
+                    <span class="col-auto mx-3 mt-2">
+                       
+                    </span>
+                    <span class="col-9 mt-2">
+                        <p class="fs-6 fw-bold">DG Transport Document</p>
+                    </span> 
+                    <span class="mt-2 col-2" (click)="uploadFile.click()" >
+                        <img src="../assets/images/cloud-computing.svg">
+                        <input #uploadFile (change)="upload($event)" type='file' style="display:none"/>
+                    </span>
+                </div>
+            </div>
+            <div class="col-4 my-3">
+                <div class="d-flex w-100 upload-doc">
+                    <span class="col-auto mx-3 mt-2">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </span>
+                    <span class="col-9 mt-2">
+                        <p class="fs-6 fw-bold">Others</p>
+                    </span> 
+                    <span class="mt-2 col-2" (click)="uploadFile.click()" >
+                        <img src="../assets/images/cloud-computing.svg">
+                        <input #uploadFile (change)="upload($event)" type='file' style="display:none"/>
+                    </span>
+                </div>
+            </div>
+        </div> 
     </div>
-    <div class="col-4 my-3">
-        <div class="d-flex w-100 upload-doc">
-            <span class="col-auto mx-3 mt-2">
-                <i class="fa-solid fa-file-invoice"></i>
-            </span>
-            <span class="col-9 mt-2">
-                <p class="fs-6 fw-bold">DG Transport Document</p>
-            </span> 
-            <span class="mt-2 col-2" (click)="uploadFile.click()" >
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <input #uploadFile (change)="upload($event)" type='file' style="display:none"/>
-            </span>
-        </div>
-    </div>
-    <div class="col-4 my-3">
-        <div class="d-flex w-100 upload-doc">
-            <span class="col-auto mx-3 mt-2">
-                <i class="fa-solid fa-file-invoice"></i>
-            </span>
-            <span class="col-9 mt-2">
-                <p class="fs-6 fw-bold">Others</p>
-            </span> 
-            <span class="mt-2 col-2" (click)="uploadFile.click()" >
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <input #uploadFile (change)="upload($event)" type='file' style="display:none"/>
-            </span>
-        </div>
-    </div>
-</div> 
+</div>
