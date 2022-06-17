@@ -9,6 +9,7 @@ import { HeadersComponent } from './shared/headers/headers.component';
 import { PartiesComponent } from './parties/parties.component';
 import { CargoDetailsComponent } from './cargo-details/cargo-details.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
+import { ShippingDetailComponent } from './shipping-detail/shipping-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UploadDocumentsComponent } from './upload-documents/upload-documents.co
     HeadersComponent,
     PartiesComponent,
     CargoDetailsComponent,
-    UploadDocumentsComponent
+    UploadDocumentsComponent,
+    ShippingDetailComponent
   ],
   imports: [
     BrowserModule,

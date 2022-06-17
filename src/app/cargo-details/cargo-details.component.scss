@@ -1,17 +1,71 @@
-.radio-label {
-    font-weight: 500;
-    color: black;
-    font-size: 14px;
-}
-
-.form-check-input {
-    cursor: pointer;
-}
-
 .fa-circle-info {
     color: rgb(34, 161, 211);
 }
 
 .fa-plus, .fa-clone {
     color: blue;
+}
+
+.collapse-label {
+    font-size: small;
+}
+
+@mixin btn-blue {
+    border-radius: 25px;
+    border: 1.5px solid blue;
+    color: blue;
+    background-color: transparent;  
+    font-weight: 600; 
+}
+.complete-all-btn { 
+    @include btn-blue();
+    font-size: x-small;
+}
+
+
+table thead th {
+    font-size: x-small;
+}
+
+table tbody tr input, select {
+    width: 140px;
+    font-size: small;
+}
+
+.exp-collapse {
+    cursor: pointer;
+}
+
+.copy-link {
+    font-size: small;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(0, 180, 189);
+    cursor: pointer;
+}
+
+
+
+@mixin collapse-input-select-size {
+    width: 100px;
+    height: 30px;
+    font-size: small;
+}
+
+.collapse-input, .collapse-select {
+    @include collapse-input-select-size();
+}
+
+.add-cargo-detail-btn {
+    @include btn-blue();
+    font-size: 13px;
+}
+
+textarea::placeholder {
+    font-size: small;
+}
+
+.form-check-input {
+    cursor: pointer;
+    
 }
