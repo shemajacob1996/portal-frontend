@@ -1,0 +1,16 @@
+@mixin content-style {
+    color: black;
+    font-weight: 600;
+}
+
+.content-medium {
+    @include content-style;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.list-label {
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+}
