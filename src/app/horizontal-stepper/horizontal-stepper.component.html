@@ -1,20 +1,13 @@
-<!-- <div class="m-4 card rounded"  >
-    <div class="card-title p-1">
-        <div class="wrapper">
-            <ol class="c-stepper">
-                <li class="c-stepper__item">
-                    <h3 class="c-stepper__title">PARTIES</h3>
-                </li>
-                <li class="c-stepper__item">
-                    <h3 class="c-stepper__title">CARGO DETAILS</h3>
-                </li>
-                <li class="c-stepper__item">
-                    <h3 class="c-stepper__title">UPLOAD DOCUMENTS</h3>
-                </li>              
-            </ol>
-        </div>
-    </div>
-    <div class="card-body">
-    
-    </div>
-</div> -->
+<div class="wrapper">
+    <ol class="c-stepper">
+        <li class="c-stepper__item"  (click)="activeCard('parties')" >
+            <h3 class="c-stepper__title">PARTIES </h3>
+        </li>
+        <li class="c-stepper__item" (click)="activeCard('cargoDetails')">
+            <h3 class="c-stepper__title" >CARGO DETAILS</h3>
+        </li>
+        <li class="c-stepper__item"  (click)="activeCard('uploadDocuments')">
+            <h3 class="c-stepper__title">UPLOAD DOCUMENTS</h3>
+        </li>
+    </ol>
+</div>

@@ -1,18 +1,6 @@
 <div class="card mb-4">
     <div class="card-title mb-0 pt-1 border-bottom">
-        <div class="wrapper">
-            <ol class="c-stepper">
-                <li class="c-stepper__item">
-                    <h3 class="c-stepper__title">PARTIES</h3>
-                </li>
-                <li class="c-stepper__item">
-                    <h3 class="c-stepper__title">CARGO DETAILS</h3>
-                </li>
-                <li class="c-stepper__item">
-                    <h3 class="c-stepper__title">UPLOAD DOCUMENTS</h3>
-                </li>
-            </ol>
-        </div>
+        <app-horizontal-stepper></app-horizontal-stepper>
     </div>
     <div class="card-body mb-0">
         <div>
@@ -48,7 +36,7 @@
                             </div>
                         </div>
                         <div class="ps-4">
-                            <textarea name="" id="ht" cols="50" rows="5" [value]=""></textarea>
+                            <textarea name="" cols="50" rows="5" [value]=""></textarea>
                         </div>
                         <small class="text-secondary d-flex justify-content-end me-4">30/175</small>
                     </div>
@@ -66,7 +54,7 @@
                         </div>
                         <small class="text-secondary d-flex justify-content-end me-4">30/175</small>
                     </div>
-                    <div class="col-6 d-block mt-3 px-4" id="nt">
+                    <div class="col-6 d-block mt-3 px-4">
                         <div class="d-flex">
                             <div class="col-11">
                                 <p class="radio-label">Notify Party <span class="text-danger">*</span></p>
@@ -90,7 +78,7 @@
                             </div>
                         </div>
                         <div class="ps-4">
-                            <textarea name="" id="ht" cols="50" rows="5"></textarea>
+                            <textarea name="" cols="50" rows="5"></textarea>
                         </div>
                         <small class="text-secondary d-flex justify-content-end me-4">30/175</small>
                     </div>

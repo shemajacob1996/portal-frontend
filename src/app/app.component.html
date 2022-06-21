@@ -2,8 +2,8 @@
   <nav class="navbar navbar-expand-md navbar-white py-0">
     <div class="row w-100">
       <div class="col-4">
-        <span class="d-flex justify-content-start mx-5">
-          <img src="../assets/images/KN-Circular.png" width="40" height="40" class="my-2" alt="">
+        <span class="d-flex justify-content-start mx-5 margin">
+          <img src="../assets/images/KN-Circular.png" width="40" height="40" class="my-2" alt="" class="margin">
           <img src="../assets/images/Kuehne_Nagel_logo@2x.png"  height="55" alt="">
         </span>
       </div>
@@ -12,14 +12,14 @@
           <p class="shipping-ins-text mt-3">shipping instructions <span class="version">V2.9.16</span></p>
         </span>
       </div>
-      <div class="col-5 d-flex">
+      <div class="col-3 d-flex">
         <div class="col-auto my-3">
           <span>
             <img src="../assets/images/excel.svg" class="mx-2" alt="">
             <a class="download-temp-link">Download Template</a>
           </span>
         </div>
-        <div class="col-auto m-3">
+        <div class="col-auto my-3">
           <span>
             <i class="fa-solid fa-cloud-arrow-up fs-4 mx-1"></i>
             <a class="download-temp-link">Upload as Excel</a>
@@ -31,21 +31,21 @@
           </span>
         </div>
         <div class="col-auto m-3">
-          <button class="btn btn-dark btn-rounded">Chinese (中國人)</button>
+          <button class="btn btn-dark btn-chinese">Chinese (中國人)</button>
         </div>
       </div>
     </div>
   </nav>
   <nav class="navbar navbar-expand-md">
     <div class="row w-100">
-      <div class="col-4 px-5 d-block">
-        <p class="m-0 nav-title">K.N Reference No</p>
+      <div class="col-4 px-5 d-block reference">
+        <p class="m-0 nav-title" >K.N Reference No</p>
         <p class="m-0 fs-5">4357-0338-112.028</p>
       </div>
       <div class="col-4 d-flex justify-content-center align-items-center">
         <p class="m-0 fs-5">SI cut off: 02/12/2022. 21:30:00</p>
       </div>
-      <div class="col-4 d-flex justify-content-end align-items-center">
+      <div class="col-4 d-flex justify-content-end align-items-center ">
         <button class="btn btn-dark btn-rounded mx-3">Save</button>
         <button class="btn btn-dark btn-rounded mx-3">Preview</button>
         <button class="btn btn-info btn-rounded mx-3">Submit</button>
@@ -55,10 +55,19 @@
 </header>
 
 <div class="container my-5">
-  <app-shipping-detail></app-shipping-detail>
-  <app-parties></app-parties>
-  <app-cargo-details></app-cargo-details>
-  <app-upload-documents></app-upload-documents>
+    <app-shipping-detail ></app-shipping-detail>
+  <div id="parties">
+     <app-parties ></app-parties>
+    </div>
+  <div id="cargoDetails">
+    <app-cargo-details></app-cargo-details>
+  </div>
+  <div id="uploadDocuments">
+    <app-upload-documents></app-upload-documents>
+  </div>
+
+ 
+
 </div>
 <footer class="footer d-flex p-3">
   <div class="col-2 px-5"><a href="" style="color:rgb(229, 222, 222);;">Privacy policy</a> </div>

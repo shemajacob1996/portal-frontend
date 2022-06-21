@@ -4,6 +4,14 @@
     height: max-content;
     font-size: small;
     font-weight: 500;
+    width: 100px;
+}
+.btn-chinese{
+    width: max-content;
+    border-radius: 20px;
+    height: max-content;
+    font-size: small;
+    font-weight: 500;
 }
 
 .btn-dark {
@@ -13,7 +21,7 @@
 .shipping-ins-text {
     color: #013c76;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -34,9 +42,22 @@
 }
 
 .download-temp-link {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
     color: black;
+}
+
+.margin {
+    margin-left: 65px;
+}
+
+.reference{
+    // text-align: start;
+ margin-left: -36px;
+}
+
+.button {
+    border-radius: 10px;
 }

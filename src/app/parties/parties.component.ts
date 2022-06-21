@@ -13,7 +13,6 @@ export class PartiesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   onExpandRow(){
     this.isExpandRow = !this.isExpandRow;
   }
