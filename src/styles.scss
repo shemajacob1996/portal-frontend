@@ -1,0 +1,115 @@
+
+/* You can add global styles to this file, and also import other style files */
+// @import url(../src/app/shared/theme/variable.scss);
+
+.c-stepper {      //horizontal-stepper
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.c-stepper__title{
+    font-size: 14px;
+    margin: 0;
+}
+
+.c-stepper__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.c-stepper__item:not(:last-child) {
+    flex: 1;
+}
+
+.c-stepper__item:before {
+    --size: 2rem;
+    content: "";
+    display: block;
+    flex: 0 0 var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: 3px solid #013c76;
+}
+
+.c-stepper__item:not(:last-child):after {
+    content: "";
+    flex: 1;
+    height: 3px;
+    background-color: #013c76;
+    margin-inline-end: 0.5rem;
+}
+
+.wrapper{
+    width: 60%;
+}
+.c-stepper__item:nth-child(1):before{
+    border: 9px solid #013c76;
+}
+
+.c-stepper__item:nth-child(2):before{
+    font-family: "Font Awesome 5 Free";
+   content: "\f058";
+   display: inline-block;
+   font-weight: 900;
+   font-size: 28px;
+   border: none;
+   height: 3.2rem;
+   color: #013c76;
+}
+
+.c-stepper__item:last-child .c-stepper__title{
+    width: 170px;
+}
+
+textarea {
+    resize: none !important;
+}
+
+.nav-title {
+    font-size: small;
+    font-weight: 500;
+    .nav-title:nth-child(1){
+        font-weight: 500;
+    }
+}
+
+.navbar {
+    background-color: #013c76;
+    color: white;
+    text-align: center;
+    color: rgb(229, 222, 222);
+    font-size: 10px;
+}
+
+.footer {
+    background-color: #013c76;
+    color: white;
+    overflow: hidden;
+}
+
+.navbar-white {
+    background-color: white;
+    color: black;
+}
+
+.white-nav-title {
+    text-transform: uppercase;
+    color: #013c76;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+ @font-face {
+    font-family:"Font-Bold";
+    src: url(./assets/fonts/Rubik/Rubik-Bold.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: "Font-Medium";
+    src: url(./assets/fonts/Rubik/Rubik-Medium.ttf) format('ttf');
+}
+
+
+
