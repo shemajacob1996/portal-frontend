@@ -1,0 +1,152 @@
+export const  CARGODETAILS =
+  {
+    "code": 200,
+    "status": "success",
+    "message": "shipment fetched successfully",
+    "data": {
+      "trackingNumber": "1046199385",
+      "docType": "0",
+      "balDocType": "BSB",
+      "shipmentType": "FCL",
+      "shipperAddress": null,
+      "consigneeAddress": "SHOP DIRECT HOME SHOPPING LIMITED\n1ST FLOOR, SKYWAYS HOUSE\nSPEKE ROAD, SPEKE\nLIVERPOOL",
+      "notifyPartyAddress": null,
+      "notifyPartyAddressTwo": null,
+      "placeOfReceipt": null,
+      "preCarriageBy": "MSC ADITI",
+      "portOfLoading": "FUZHOU",
+      "oceanVessel": "MSC MICHELLE",
+      "voyageNumber": "FL225W",
+      "portOfTransshipment": "YANTIAN",
+      "portOfDischarge": "LIVERPOOL",
+      "placeOfDelivery": null,
+      "movement": "CY/CY",
+      "freightPayableAt": "DESTINATION",
+      "invoiceParty": "MINHOU WEISHENG ARTS&CRAFTS CO., LTD.",
+      "blInstruction": null,
+      "docContactEmails": "vinayan.v@perfomatix.com",
+      "telexRelease": false,
+      "showHsCode": false,
+      "status": "SAVED",
+      "siCutOffDate": null,
+      "logoUrl": "",
+      "defaultLang": "EN",
+      "deliveryAgent": "Kuehne + Nagel Ltd.\nKNGBLIVFS\nPort of Liverpool Building\n28/29 Pier Head\nLiverpool L3 1BY",
+      "exportOffice": "CNXMN",
+      "bal": "Y",
+      "freightPaymentTerm": "COLLECT",
+      "carrierCode": "MSCU",
+      "pol": "CNFOC",
+      "fcrRequired": false,
+      "containers": [
+        {
+          "id": "0dacc65d-33b7-4ffd-adff-b785e5f8df3c",
+          "containerNumber": "CAIU8430801",
+          "containerType": {
+            "id": "2340d00b-7651-4e3c-a7e4-71890e8546de",
+            "ediContainerType": "40HC",
+            "cielUnitType": "40H",
+            "typeName": "40 ft High Cube"
+          },
+          "cargoDetails": [
+            {
+              "id": "e5b06e91-8b2e-4518-8813-0b7c8a9b07d1",
+              "hscode": "94036099",
+              "marksNumbers": "N/A",
+              "goodsDescription": "WOODEN DRAWER WITH MIRROR\nSPA0218\n4AADY4AAJP::DRAWER   \nSPARE PARTS - DRAWER",
+              "grossWeight": 29.7,
+              "measurement": 0.234,
+              "numberOfPackages": 1,
+              "packageTypeDTO": {
+                "id": "c26c1ff3-79e8-4788-9578-de9be5646e10",
+                "type": "CTN",
+                "name": "Carton"
+              }
+            },
+            {
+              "id": "2dda2e34-0f52-4611-9fb3-091085ea8663",
+              "hscode": "94036099",
+              "marksNumbers": "CAT NO./OPTION \nNO.             \nWAREHOUSE CODE  \nPRODUCT \nDESCRIPTION \nCOLOUR \nDESCRIPTION \nSUPPLIER CODE   \nCONTRACT NUMBER \nPACK CONSIGNMENT\nNUMBER ID",
+              "goodsDescription": "WOODEN CABINET WITH MIRROR\n529582-1\n4AAE4 / 4AAJR\nPARISIAN MIRROR 3 DRAWER \nBEDSIDE CABINET",
+              "grossWeight": 2277,
+              "measurement": 15.12,
+              "numberOfPackages": 90,
+              "packageTypeDTO": {
+                "id": "c26c1ff3-79e8-4788-9578-de9be5646e10",
+                "type": "CTN",
+                "name": "Carton"
+              }
+            },
+            {
+              "id": "79bc6bf2-6541-455d-810d-505ff026795c",
+              "hscode": "94036099",
+              "marksNumbers": "CAT NO./OPTION \nNO.             \nWAREHOUSE CODE  \nPRODUCT \nDESCRIPTION \nCOLOUR \nDESCRIPTION \nSUPPLIER CODE   \nCONTRACT NUMBER \nPACK CONSIGNMENT\nNUMBER ID",
+              "goodsDescription": "WOODEN CABINET WITH MIRROR\n529583-1\n4AAE3 / 4AAJQ\nPARISIAN MIRROR 3 DRAWER \nWIDE CHEST",
+              "grossWeight": 2381.4,
+              "measurement": 23.706,
+              "numberOfPackages": 54,
+              "packageTypeDTO": {
+                "id": "c26c1ff3-79e8-4788-9578-de9be5646e10",
+                "type": "CTN",
+                "name": "Carton"
+              }
+            },
+            {
+              "id": "735b8f60-fc9a-4093-b5a7-1213c4c35e0b",
+              "hscode": "94036099",
+              "marksNumbers": "CAT NO./OPTION \nNO.             \nWAREHOUSE CODE  \nPRODUCT \nDESCRIPTION \nCOLOUR \nDESCRIPTION \nSUPPLIER CODE   \nCONTRACT NUMBER \nPACK CONSIGNMENT\nNUMBER ID",
+              "goodsDescription": "WOODEN CABINET WITH MIRROR\n529586-1\n4AADY / 4AAJP\nPARISIAN MIRROR 5 DRAWER \nTALL NARROW CHEST",
+              "grossWeight": 2445,
+              "measurement": 19.65,
+              "numberOfPackages": 50,
+              "packageTypeDTO": {
+                "id": "c26c1ff3-79e8-4788-9578-de9be5646e10",
+                "type": "CTN",
+                "name": "Carton"
+              }
+            },
+            {
+              "id": "8402f968-c41a-42ef-be0a-5278084b76d9",
+              "hscode": "94036099",
+              "marksNumbers": "N/A",
+              "goodsDescription": "WOODEN DRAWER WITH MIRROR\nSPR0217\n4AADY4AAJP::DRAWER   \nSPARE PARTS - DRAWER",
+              "grossWeight": 47.3,
+              "measurement": 0.362,
+              "numberOfPackages": 2,
+              "packageTypeDTO": {
+                "id": "c26c1ff3-79e8-4788-9578-de9be5646e10",
+                "type": "CTN",
+                "name": "Carton"
+              }
+            },
+            {
+              "id": "48f301cd-6ca7-4197-aaa0-f376ddf25fff",
+              "hscode": "94036099",
+              "marksNumbers": "CAT NO./OPTION \nNO.             \nWAREHOUSE CODE  \nPRODUCT \nDESCRIPTION \nCOLOUR \nDESCRIPTION \nSUPPLIER CODE   \nCONTRACT NUMBER \nPACK CONSIGNMENT\nNUMBER ID",
+              "goodsDescription": "WOODEN TABLE WITH MIRROR\n529581-1\nTNNGH / TNNGH\nPARISIAN 1 DRAWER 1 LOWER\nSHELF BEDSIDE TABLE",
+              "grossWeight": 1518,
+              "measurement": 10.08,
+              "numberOfPackages": 60,
+              "packageTypeDTO": {
+                "id": "c26c1ff3-79e8-4788-9578-de9be5646e10",
+                "type": "CTN",
+                "name": "Carton"
+              }
+            }
+          ],
+          "totalGrossWeight": 8698.4,
+          "totalMeasurement": 69.152,
+          "totalContainerPackages": 257,
+          "sealNumber": "",
+          "sequenceNumber": 1
+        }
+      ],
+      "shipperPhoneNumber": null,
+      "shipperVatCode": null,
+      "consigneeVatCode": null,
+      "consigneeContactName": null,
+      "consigneeContactPhoneNumber": null,
+      "notifyVatCode": null,
+      "addCountryNames": null
+    }
+  }

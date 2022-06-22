@@ -11,6 +11,7 @@
       ]
     },
     "array-type": false,
+    "interface-name": false,
     "arrow-return-shorthand": true,
     "curly": true,
     "deprecation": {

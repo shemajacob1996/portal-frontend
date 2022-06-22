@@ -1,16 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { CARGODETAILS } from '@app/app.constant';
 
+
+
+
+
+
+  
 @Component({
   selector: 'app-cargo-details',
   templateUrl: './cargo-details.component.html',
   styleUrls: ['./cargo-details.component.scss']
 })
+
+
 export class CargoDetailsComponent implements OnInit {
 
   public isExpandRow: boolean = false;
   public invoice_party_placeholder = "Local charges are payable by this party if other than the shipper";
+  containerNumber: any;
+  cargoDetailsData = CARGODETAILS
 
-
+  constructor()  {
+    
+  }
+  
 
   onExpandRow(){
     this.isExpandRow = !this.isExpandRow;
@@ -21,8 +35,13 @@ export class CargoDetailsComponent implements OnInit {
 
  
 
-  ngOnInit(): void {
-    
+  ngOnInit() {
+    console.log('s',this.cargoDetailsData)
+    this.getContainerDetails()
   }
-
+getContainerDetails(){
+ 
+   
+  
+}
 }
