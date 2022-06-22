@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-cargo-details',
@@ -6,23 +7,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cargo-details.component.scss']
 })
 export class CargoDetailsComponent implements OnInit {
-
+  isShipmentType : string ='';
+  resData:any;
   public isExpandRow: boolean = false;
   public invoice_party_placeholder = "Local charges are payable by this party if other than the shipper";
+constructor(private _httpClient: HttpClient) {}
 
 
+ngOnInit(): void {
+  
+  this._httpClient.get('../../assets/response.json').subscribe((res : any) =>
+  {
+     this.resData = res;
+     console.log(res.data.shipmentType)
+    this.isShipmentType = res.data.shipmentType;
+ console.log(res)
 
+  })
+  
+}
   onExpandRow(){
     this.isExpandRow = !this.isExpandRow;
   }
-
+  add:any ;
   // shipper: string = "FOSHAN SHUNDAE YONG LI HUA SPORTSWEAR CO.,LTD NO.5 XINGYE MID.RD.,LUNJIAO INDUSTRIAL ZONE,SHUNDE DISTRICT FOSHAN CITY GUANGDONG CHINA ";
   // consignee: string = "KUEHNE & NAGEL LTD GUANGZHOU BRANCH 20-21/F CENTER PLAZA NORTH TOWER 159 LINHEXI ROAD, TIANHE GUANGZHOU 510620.P.R,CHINA ";
-
+addCargo() {
+  this.add.get()
+}
  
 
-  ngOnInit(): void {
-    
-  }
+
 
 }

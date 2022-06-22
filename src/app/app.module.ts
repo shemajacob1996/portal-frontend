@@ -10,6 +10,7 @@ import { PartiesComponent } from './parties/parties.component';
 import { CargoDetailsComponent } from './cargo-details/cargo-details.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { ShippingDetailComponent } from './shipping-detail/shipping-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ShippingDetailComponent } from './shipping-detail/shipping-detail.compo
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
