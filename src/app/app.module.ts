@@ -10,6 +10,8 @@ import { PartiesComponent } from './parties/parties.component';
 import { CargoDetailsComponent } from './cargo-details/cargo-details.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { ShippingDetailComponent } from './shipping-detail/shipping-detail.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptor, LoaderService } from './loader-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,12 @@ import { ShippingDetailComponent } from './shipping-detail/shipping-detail.compo
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
