@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                                 <div class="ps-4">
-                                    <textarea name="" cols="50" rows="5" [value]="">{{resData.data.shipperAddress}}</textarea>
+                                    <textarea name="" cols="50" rows="5" [value]="shippingMasterData?.shipperAddress"></textarea>
                                 </div>
                                 <small class="text-secondary d-flex justify-content-end me-4">30/175</small>
                             </div>
@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="ps-4">
-                                    <textarea name="" cols="50" rows="5">{{resData.data.consigneeAddress}}</textarea>
+                                    <textarea name="" cols="50" rows="5" [value]="shippingMasterData?.consigneeAddress"></textarea>
                                 </div>
                                 <small class="text-secondary d-flex justify-content-end me-4">30/175</small>
                             </div>
@@ -67,7 +67,7 @@
                                     </div>
                                 </div>
                                 <div class="ps-4">
-                                    <textarea name="" cols="50" rows="5">{{resData.data.notifyPartyAddress}}</textarea>
+                                    <textarea name="" cols="50" rows="5" [value]="shippingMasterData?.notifyPartyAddress"></textarea>
                                 </div>
                                 <small class="text-secondary d-flex justify-content-end me-4">30/175</small>
                             </div>
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="ps-4">
-                                    <textarea name="" cols="50" rows="5">{{resData.data.notifyPartyAddressTwo}}</textarea>
+                                    <textarea name="" cols="50" rows="5" [value]="shippingMasterData?.notifyPartyAddressTwo"></textarea>
                                 </div>
                                 <small class="text-secondary d-flex justify-content-end me-4">30/175</small>
                             </div>

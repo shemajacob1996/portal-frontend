@@ -1,261 +1,264 @@
 <div class="card mb-4">
-    <div class="card-title mb-0 pt-1 border-bottom">
-      <app-horizontal-stepper></app-horizontal-stepper>
+  <div class="card-title mb-0 pt-1 border-bottom">
+    <app-horizontal-stepper></app-horizontal-stepper>
   </div>
-
-    <div class="card-body mb-0">
-      
-   <div>
-      <div *ngIf="isShipmentType === 'FCL'">
-        <table class="table table-borderless">
-          <thead>
-            <th colspan="1"></th>
-            <th class="py-3">Container No
-              <span class="text-danger px-0">*</span>
-              <span><i class="fa-solid fa-circle-info"></i></span>
-            </th>
-            <th class="py-3" id="wt">Container Type
-              <span class="text-danger px-0">*</span>
-            </th>
-            <th class="py-3" id="wt">Seal No
-              <span class="text-danger px-0">*</span>
-              <span><i class="fa-solid fa-circle-info"></i></span>
-            </th>
-            <th class="py-3">Total Number of Packages
-              <span class="text-danger px-0">*</span>
-            </th>
-            <th class="py-3">Total Gross Weight(Kg)
-              <span class="text-danger px-0">*</span>
-            </th>
-            <th class="py-3">Total Measurement
-              <span class="text-danger px-0">*</span>
-            </th>
-            <th class="py-3">
-              <button class="complete-all-btn btn-sm">
-                <span>
-                  <img src="../assets/images/blue-flat-tick.svg"></span>
-                COMPLETE ALL
-              </button>
-            </th>
-          </thead>
-          <tbody>
-            <tr class="bg-light">
-              <td>
-                <button class="btn collapseBtn" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                  aria-expanded="false" aria-controls="collapseExample" (click)="onExpandRow()">
-                  <i class="fa-solid exp-collapse"
-                    [ngClass]="{ 'fa-minus': isExpandRow, 'fa-plus': !isExpandRow } "></i>
+  <div class="card-body mb-0">
+    <div>
+      <form [formGroup]="containerDetailsForm">
+        <div *ngIf="isShipmentType === 'FCL'">
+          <table class="table table-borderless">
+            <thead>
+              <th colspan="1"></th>
+              <th class="py-3">Container No
+                <span class="text-danger px-0">*</span>
+                <span><i class="fa-solid fa-circle-info"></i></span>
+              </th>
+              <th class="py-3" id="wt">Container Type
+                <span class="text-danger px-0">*</span>
+              </th>
+              <th class="py-3" id="wt">Seal No
+                <span class="text-danger px-0">*</span>
+                <span><i class="fa-solid fa-circle-info"></i></span>
+              </th>
+              <th class="py-3">Total Number of Packages
+                <span class="text-danger px-0">*</span>
+              </th>
+              <th class="py-3">Total Gross Weight(Kg)
+                <span class="text-danger px-0">*</span>
+              </th>
+              <th class="py-3">Total Measurement
+                <span class="text-danger px-0">*</span>
+              </th>
+              <th class="py-3">
+                <button class="complete-all-btn btn-sm">
+                  <span>
+                    <img src="../assets/images/blue-flat-tick.svg"></span>
+                  COMPLETE ALL
                 </button>
-              </td>
-              <td>
-                <input type="text" value=" {{resData.data.containers[0].containerNumber}}">
-               
-              </td>
-              <td>
-                <select name="" id="" class="w-100">
-                  <option value="">40HC</option>
-                  <option value="">50HC</option>
-                  <option value="">60HC</option>
-                </select>
-              </td>
-              <td>
-                <input type="text" value="{{resData.data.containers[0].sealNumber}}">
-              </td>
-              <td>
-                <input type="text" disabled value="{{resData.data.containers[0].totalContainerPackages}}">
-              </td>
-              <td>
-                <input type="text" disabled value="{{resData.data.containers[0].totalGrossWeight}}">
-              </td>
-              <td>
-                <input type="text" disabled value="{{resData.data.containers[0].totalMeasurement}}">
-              </td>
-              <td>
-                <span>
-                  <!-- <i class="fa-solid fa-clone me-2 exp-collapse"></i> -->
-                  <img src="../../assets/images/copy-icon.svg" class="mx-2">
-                  <button class="complete-all-btn btn-sm">
-                    <span>
-                     <img src="../assets/images/blue-flat-tick.svg">
-                      COMPLETE
-                    </span>
+              </th>
+            </thead>
+            <tbody>
+              <tr class="bg-light">
+                <td>
+                  <button class="btn collapseBtn" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample" (click)="onExpandRow()">
+                    <i class="fa-solid exp-collapse"
+                      [ngClass]="{ 'fa-minus': isExpandRow, 'fa-plus': !isExpandRow } "></i>
                   </button>
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                </td>
+                <td>
+                  <input type="text" formControlName="containerNumber">
 
-      <div [ngClass]="isShipmentType === 'FCL' ? 'collapse' : '' "     [id]="isShipmentType ==='FCL'? 'collapseExample' :''">  
-        <div class="card p-3">
-          <div class="row">
-            <div class="col-auto d-block">
-              <div>
-                <h6 class="collapse-label">HS Code <span><i class="fa-solid fa-circle-info"></i></span></h6>
-              </div>
-              <div class="mt-3">
-                <input type="text" value="{{resData.data.containers[0].cargoDetails[0].hscode}}" class="collapse-input">
-              </div>
-            </div>
-            <div class="col-auto d-block">
-              <div>
-                <h6 class="collapse-label">No. of Packages <span class="text-danger">*</span></h6>
-              </div>
-              <div class="mt-3">
-                <input type="text" value="{{resData.data.containers[0].cargoDetails[0].numberOfPackages}}" class="collapse-input">
-              </div>
-            </div>
-            <div class="col-auto d-block">
-              <div>
-                <h6 class="collapse-label">Type of Packages <span class="text-danger">*</span></h6>
-              </div>
-              <div class="mt-3">
-                <select name="" id="" class="collapse-select">
-                  <option value="">PCS</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-auto d-block">
-              <div>
-                <h6 class="collapse-label">Marks & Nos <span class="text-danger">*</span></h6>
-              </div>
-              <div class="mt-3">
-                <textarea name="" id="" cols="30" rows="5">{{resData.data.containers[0].cargoDetails[0].marksNumbers}}</textarea>
-              </div>
-            </div>
-            <div class="col-auto d-block">
-              <div>
-                <h6 class="collapse-label">Description of Goods <span class="text-danger">*</span></h6>
-              </div>
-              <div class="mt-3">
-                <textarea name="" id="" cols="30" rows="5">{{resData.data.containers[0].cargoDetails[0].goodsDescription}}</textarea>
-              </div>
-            </div>
-            <div class="col-auto d-block">
-              <div>
-                <h6 class="collapse-label">Gross Weight(Kg) <span class="text-danger">*</span></h6>
-              </div>
-              <div class="mt-3">
-                <input type="text" value="{{resData.data.containers[0].cargoDetails[0].grossWeight}}" class="collapse-input">
-              </div>
-            </div>
-            <div class="col-auto d-block px-0">
-              <div>
-                <h6 class="collapse-label">Measurement(CBM) <span class="text-danger">*</span></h6>
-              </div>
-              <div class="d-flex mt-3">
+                </td>
+                <td>
+                  <select name="" id="" class="w-100" formControlName="containerType">
+                    <option [value]="conType?.ediContainerType" *ngFor="let conType of containerType">
+                      {{conType?.ediContainerType}}</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="text" formControlName="sealNumber">
+                </td>
+                <td>
+                  <input type="text" [disabled]="true" formControlName="totalContainerPackages">
+                </td>
+                <td>
+                  <input type="text" [disabled]="true" formControlName="totalGrossWeight">
+                </td>
+                <td>
+                  <input type="text" [disabled]="true" formControlName="totalMeasurement">
+                </td>
+                <td>
+                  <span>
+                    <img src="../../assets/images/copy-icon.svg" (click)="onClickPasteIcon()" class="mx-2">
+                    <button class="complete-all-btn btn-sm">
+                      <span>
+                        <img src="../assets/images/blue-flat-tick.svg">
+                        COMPLETE
+                      </span>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div [ngClass]="isShipmentType === 'FCL' ? 'collapse' : '' "
+          [id]="isShipmentType ==='FCL'? 'collapseExample' :''" formArrayName="cargoDetails">
+          <div class="card p-3 my-2" *ngFor="let cargoDetail of cargoDetails.controls; let index = index">
+            <div class="row" [formGroupName]="index">
+              <div class="col-auto d-block">
                 <div>
-                  <input type="text" value="{{resData.data.containers[0].cargoDetails[0].measurement}}" class="collapse-input">
+                  <h6 class="collapse-label">HS Code <span><i class="fa-solid fa-circle-info"></i></span></h6>
                 </div>
-                <div class="ms-4">
-                  <!-- <a class="copy-link">Remove</a> -->
-                  <a class="copy-link">Copy</a>
+                <div class="mt-3">
+                  <input type="text" class="collapse-input" formControlName="hscode">
+                </div>
+              </div>
+              <div class="col-auto d-block">
+                <div>
+                  <h6 class="collapse-label">No. of Packages <span class="text-danger">*</span></h6>
+                </div>
+                <div class="mt-3">
+                  <input type="text" class="collapse-input" formControlName="numberOfPackages">
+                </div>
+              </div>
+              <div class="col-auto d-block">
+                <div>
+                  <h6 class="collapse-label">Type of Packages <span class="text-danger">*</span></h6>
+                </div>
+                <div class="mt-3">
+                  <select name="" id="" class="collapse-select" formControlName="packageTypeDTO">
+                    <option [value]="typePackage.type" *ngFor="let typePackage of packageTypeDTO">{{ typePackage?.type }}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-auto d-block">
+                <div>
+                  <h6 class="collapse-label">Marks & Nos <span class="text-danger">*</span></h6>
+                </div>
+                <div class="mt-3">
+                  <textarea name="" id="" cols="30" rows="5" formControlName="marksNumbers"></textarea>
+                </div>
+              </div>
+              <div class="col-auto d-block">
+                <div>
+                  <h6 class="collapse-label">Description of Goods <span class="text-danger">*</span></h6>
+                </div>
+                <div class="mt-3">
+                  <textarea name="" id="" cols="30" rows="5" formControlName="goodsDescription"></textarea>
+                </div>
+              </div>
+              <div class="col-auto d-block">
+                <div>
+                  <h6 class="collapse-label">Gross Weight(Kg) <span class="text-danger">*</span></h6>
+                </div>
+                <div class="mt-3">
+                  <input type="text" class="collapse-input" formControlName="grossWeight">
+                </div>
+              </div>
+              <div class="col-auto d-block px-0">
+                <div>
+                  <h6 class="collapse-label">Measurement(CBM) <span class="text-danger">*</span></h6>
+                </div>
+                <div class="d-flex mt-3">
+                  <div>
+                    <input type="text" class="collapse-input" formControlName="measurement">
+                  </div>
+                  <div class="ms-4">
+                    <div>
+                      <a class="copy-link" (click)="removeCargoDetailForm(index)">Remove</a>
+                    </div>
+                    <div>
+                      <a class="copy-link" (click)="copyCargoDetailForm(index)">Copy</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      
+      </form>
     </div>
-      <div>
-        <div class="my-4">
-          <button class="add-cargo-detail-btn">
-            <span>
-              <i class="fa-solid fa-plus btn"></i>
-              <label class="me-2">Add Cargo Detils</label>
-            </span>
-          </button>
+    <div>
+      <div class="my-4">
+        <button class="add-cargo-detail-btn" (click)="addCargoDetailForm()">
+          <span>
+            <i class="fa-solid fa-plus btn"></i>
+            <label class="me-2">Add Cargo Detils</label>
+          </span>
+        </button>
+      </div>
+      <div class="row flex-wrap">
+        <div class="col-3 d-block">
+          <div>
+            <p class="fs-6 fw-bold">Invoice Party</p>
+          </div>
+          <div>
+            <textarea type="text" rows="5" cols="36" [value]="cargoMasterData?.invoiceParty"></textarea>
+          </div>
         </div>
-        <div class="row flex-wrap">
-          <div class="col-3 d-block">
-            <div>
-              <p class="fs-6 fw-bold">Invoice Party</p>
+        <div class="col-3 d-block">
+          <div>
+            <p class="fs-6 fw-bold">B/L Handling Instructions</p>
+          </div>
+          <div>
+            <textarea type="text" rows="5" cols="36" [value]="cargoMasterData?.blInstruction"></textarea>
+          </div>
+        </div>
+        <div class="col-3 d-block px-0">
+          <div class="m-3 mt-5     d-flex">
+            <input type="checkbox" class="form-check-input" disabled [checked]="cargoMasterData?.telexRelease">
+            <p style="font-size: small;" class="m-1 mx-3 fw-bold">Telex Release <i class="fa-solid fa-circle-info"></i>
+            </p>
+          </div>
+          <div class="m-3 d-flex">
+            <input type="checkbox" class="form-check-input" [checked]="cargoMasterData?.showHsCode">
+            <p style="font-size: small;" class="m-1 mx-3 fw-bold">Show HS-codes <i class="fa-solid fa-circle-info"></i>
+            </p>
+          </div>
+          <div class="m-3 d-flex">
+            <input type="checkbox" class="form-check-input" [checked]="cargoMasterData?.addCountryNames">
+            <p style="font-size: small;" class="m-1 mx-3 fw-bold">Add Country Names After Port <i
+                class="fa-solid fa-circle-info"></i></p>
+          </div>
+        </div>
+        <div class="col-3 d-block p-3 bg-light">
+          <div>
+            <h6 class="fw-bold">SHIPMENT SUMMARY</h6>
+          </div>
+          <div class="row mt-3">
+            <div class="col-8">
+              <p class="mb-1">Number of Containers</p>
             </div>
-            <div>
-              <textarea type="text" rows="5" cols="36" [placeholder]="">{{resData.data.invoiceParty}}</textarea>
+            <div class="col-4 text-end">
+              <p class="fw-bold  m-0" style="font-size: small;">{{ cargoMasterData?.containers?.length }}</p>
             </div>
           </div>
-          <div class="col-3 d-block">
-            <div>
-              <p class="fs-6 fw-bold">B/L Handling Instructions</p>
+          <div class="row">
+            <div class="col-8">
+              <p class="mb-1">Total Gross Weight(Kg)</p>
             </div>
-            <div>
-              <textarea type="text" rows="5" cols="36" placeholder="">{{resData.data.blInstruction}}</textarea>
-            </div>
-          </div>
-          <div class="col-3 d-block">
-            <div class="m-3 mt-5     d-flex">
-              <input type="checkbox" class="form-check-input" disabled>
-              <p style="font-size: small;" class="m-1 mx-3 fw-bold">Telex Release <i
-                  class="fa-solid fa-circle-info"></i></p>
-            </div>
-            <div class="m-3 d-flex">
-              <input type="checkbox" class="form-check-input">
-              <p style="font-size: small;" class="m-1 mx-3 fw-bold">Show HS-codes <i
-                  class="fa-solid fa-circle-info"></i></p>
-            </div>
-            <div class="m-3 d-flex">
-              <input type="checkbox" class="form-check-input">
-              <p style="font-size: small;" class="m-1 mx-3 fw-bold">Add Country Names After Port <i
-                  class="fa-solid fa-circle-info"></i></p>
+            <div class="col-4 text-end">
+              <p class="fw-bold  m-0" style="font-size: small;">{{ cargoMasterData.containers[0]?.totalGrossWeight + '
+                Kg' }}</p>
             </div>
           </div>
-          <div class="col-3 d-block p-3 bg-light">
-            <div>
-              <h6 class="fw-bold">SHIPMENT SUMMARY</h6>
+          <div class="row">
+            <div class="col-8">
+              <p class="mb-1">Total Number of Packages</p>
             </div>
-            <div class="row mt-3">
-              <div class="col-8">
-                <p class="mb-1">Number of Containers</p>
-              </div>
-              <div class="col-4 text-end">
-                <p class="fw-bold  m-0" style="font-size: small;">1</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-8">
-                <p class="mb-1">Total Gross Weight(Kg)</p>
-              </div>
-              <div class="col-4 text-end">
-                <p class="fw-bold  m-0" style="font-size: small;">8000.00 Kg</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-8">
-                <p class="mb-1">Total Number of Packages</p>
-              </div>
-              <div class="col-4 text-end">
-                <p class="fw-bold  m-0" style="font-size: small;">10</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-8">
-                <p class="mb-1">Total Measurement</p>
-              </div>
-              <div class="col-4 text-end">
-                <p class="fw-bold m-0" style="font-size: small;">60.000 CBM</p>
-              </div>
+            <div class="col-4 text-end">
+              <p class="fw-bold  m-0" style="font-size: small;">{{ cargoMasterData.containers[0]?.totalContainerPackages
+                }}</p>
             </div>
           </div>
-          <div class="col-6 d-block">
-            <div>
-              <h6 style="font-size: small;">
-                Add your documentation contact email
-                <span class="text-black-50 fw-light" style="font-size: small;">(To add multiple email
-                  addresses, add the email's seperated with comma)</span>
-              </h6>
+          <div class="row">
+            <div class="col-8">
+              <p class="mb-1">Total Measurement</p>
             </div>
-            <div>
-              <textarea name="" id="" cols="80" rows="3"></textarea>
+            <div class="col-4 text-end">
+              <p class="fw-bold m-0" style="font-size: small;">{{ cargoMasterData.containers[0]?.totalMeasurement + '
+                CBM'}}</p>
             </div>
-            <div class="d-flex justify-content-end m-2">
-              <a class="copy-link me-4">Clear All</a>
-            </div>
+          </div>
+        </div>
+        <div class="col-6 d-block">
+          <div>
+            <h6 style="font-size: small;">
+              Add your documentation contact email
+              <span class="text-black-50 fw-light" style="font-size: small;">(To add multiple email
+                addresses, add the email's seperated with comma)</span>
+            </h6>
+          </div>
+          <div>
+            <textarea name="" id="" cols="80" rows="3" [value]="cargoMasterData?.docContactEmails"></textarea>
+          </div>
+          <div class="d-flex justify-content-end m-2">
+            <a class="copy-link me-4">Clear All</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

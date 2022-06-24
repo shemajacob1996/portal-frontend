@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { IDataModel } from '@app/shared/model/data.model';
 @Component({
   selector: 'app-shipping-detail',
   templateUrl: './shipping-detail.component.html',
   styleUrls: ['./shipping-detail.component.scss']
 })
 export class ShippingDetailComponent implements OnInit {
-resData:any;
-  constructor(private _httpClient:HttpClient) { }
+  
+  @Input()
+  public shippingMasterData !: IDataModel
 
-  ngOnInit(): void {
-    this._httpClient.get('../../assets/response.json').subscribe((res:any) =>{
-    this.resData = res;
-    })
-  }
+  constructor() { }
+
+  ngOnInit(): void {}
 
 }

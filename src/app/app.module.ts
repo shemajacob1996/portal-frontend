@@ -11,6 +11,7 @@ import { CargoDetailsComponent } from './cargo-details/cargo-details.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { ShippingDetailComponent } from './shipping-detail/shipping-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

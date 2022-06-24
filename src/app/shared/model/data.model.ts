@@ -50,15 +50,10 @@ export interface IDataModel {
     addCountryNames: string | null;
 }
 
-interface IContainer {
+export interface IContainer {
     id: string;
     containerNumber: string;
-    containerType: {
-        id: string;
-        ediContainerType: string;
-        cielUnitType: string;
-        typeName: string;
-    };
+    containerType: IContainerType;
     cargoDetails: Array<ICargoDetails>;
     totalGrossWeight: number;
     totalMeasurement: number;
@@ -67,7 +62,7 @@ interface IContainer {
     sequenceNumber: number;
 }
 
-interface ICargoDetails {
+export interface ICargoDetails {
     id: string;
     hscode: string,
     marksNumbers: string,
@@ -75,9 +70,18 @@ interface ICargoDetails {
     grossWeight: number,
     measurement: number,
     numberOfPackages: number,
-    packageTypeDTO: {
-        id: string,
-        type: string,
-        name: string;
-    };
+    packageTypeDTO ?: IPackageTypeDTO | any;
+}
+
+export interface IContainerType {
+    id?: string;
+    ediContainerType: string;
+    cielUnitType: string;
+    typeName: string;
+}
+
+export interface IPackageTypeDTO {
+    id ?: string,
+    type ?: string,
+    name: string;
 }
