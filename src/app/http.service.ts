@@ -10,8 +10,9 @@ export class HttpService {
     private reqUrl = '../assets/response.json';
     
     constructor(private _httpClient: HttpClient){}
+    refNum: string;
 
-    getMasterResponseData(): Observable<IResponse> {
+    getMasterResponseData(encryptedRefNoVersion, isTokenMode: boolean): Observable<IResponse> {
         return this._httpClient.get(this.reqUrl) as Observable<IResponse>
     }
 }
