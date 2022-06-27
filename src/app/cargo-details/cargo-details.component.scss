@@ -16,6 +16,7 @@
     color: blue;
     background-color: transparent;  
     font-weight: 600; 
+    cursor: pointer;
 }
 .complete-all-btn { 
     @include btn-blue();

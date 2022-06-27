@@ -1,26 +1,17 @@
-import { Injectable } from "@angular/core";
-import { environment } from "../environments/environment";
 import { HttpClient } from "@angular/common/http";
-import { empty, BehaviorSubject } from "rxjs";
-import { Observable } from 'rxjs';
-
-
+import { Injectable } from "@angular/core"
+import { Observable } from "rxjs";
+import { IResponse } from "./shared/model/data.model";
 @Injectable({
-  providedIn: "root"
+    providedIn: 'root'
 })
 export class HttpService {
-  constructor(private httpClient: HttpClient) { }
-  Status: any;
-  private stepStatusDataSubject = new BehaviorSubject<string>(null);
-//   baseUrl = environment.baseUrl;
-  refNum: string;
-  shippingId: string;
 
-  getStepStatus(): Observable<any> {
-    return this.stepStatusDataSubject.asObservable();
-  }
+    private reqUrl = '../assets/response.json';
+    
+    constructor(private _httpClient: HttpClient){}
 
-  setStepStatus(status: any){
-    this.stepStatusDataSubject.next(status)
-  }
+    getMasterResponseData(): Observable<IResponse> {
+        return this._httpClient.get(this.reqUrl) as Observable<IResponse>
+    }
 }

@@ -55,12 +55,12 @@
 </header>
 
 <div class="container my-5">
-    <app-shipping-detail ></app-shipping-detail>
+    <app-shipping-detail [shippingMasterData]="rootMasterData"></app-shipping-detail>
   <div id="parties">
-     <app-parties ></app-parties>
+     <app-parties [partiesMasterData]="rootMasterData"></app-parties>
     </div>
   <div id="cargoDetails">
-    <app-cargo-details></app-cargo-details>
+    <app-cargo-details [cargoMasterData]="rootMasterData"></app-cargo-details>
   </div>
   <div id="uploadDocuments">
     <app-upload-documents></app-upload-documents>

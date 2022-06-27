@@ -1,20 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Component, Input, OnInit } from '@angular/core';
+import { IDataModel } from '@app/shared/model/data.model';
 @Component({
   selector: 'app-parties',
   templateUrl: './parties.component.html',
   styleUrls: ['./parties.component.scss']
 })
 export class PartiesComponent implements OnInit {
-  public isExpandRow: boolean = false;
-  public invoice_party_placeholder = "Local charges are payable by this party if other than the shipper";
+  
+  @Input()
+  public partiesMasterData !: IDataModel;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-  onExpandRow(){
-    this.isExpandRow = !this.isExpandRow;
-  }
+  ngOnInit(): void {}
 
 }

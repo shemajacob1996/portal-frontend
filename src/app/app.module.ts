@@ -11,6 +11,7 @@ import { CargoDetailsComponent } from './cargo-details/cargo-details.component';
 import { UploadDocumentsComponent } from './upload-documents/upload-documents.component';
 import { ShippingDetailComponent } from './shipping-detail/shipping-detail.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoaderInterceptor, LoaderService } from './loader-interceptor.service';
 
 @NgModule({
@@ -28,7 +29,9 @@ import { LoaderInterceptor, LoaderService } from './loader-interceptor.service';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     LoaderService,
